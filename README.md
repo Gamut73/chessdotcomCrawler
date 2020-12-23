@@ -5,11 +5,11 @@ chess.com does have an api but those are for games played on their platforms. Th
 
 ## The Program:
 
--input: name of chess player(e.g gary-kasparov)
+- input: name of chess player(e.g gary-kasparov)
 
--while running: the driver I am using is chrome which requires you to give you permission to download multiple files. The prompt will only appear on page 2 and after you click allow you don't have to do anything about it.
+- while running: the driver I am using is chrome which requires you to give you permission to download multiple files. The prompt will only appear on page 2 and after you click allow you don't have to do anything about it.
 
--output: The download files a saved in your default download path for chrome.
+- output: The download files a saved in your default download path for chrome.
 
 ## Dependencies
 - selenium
