@@ -4,7 +4,8 @@
 # # Get pro chess player's games
 # chess.com does have an api but those are for games played on their platforms. This class automates getting the games of pro players from this particular page: https://www.chess.com/games. 
 
-# In[12]:
+# In[1]:
+
 
 
 from selenium import webdriver
@@ -18,7 +19,6 @@ import time
 class PlayerGames:
     def __init__(self, player):
         self.__player = player #player's name: name-surname
-        self.__playerInfo = [] 
         
         #get the games
         self.__getGames()
@@ -32,16 +32,7 @@ class PlayerGames:
         
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(games_url) #go to player's page
-        
-        #GET PLAYER INFO from their respective divs {name, birthday(age),place of birth, country of presentation}
-        info = driver.find_elements_by_class_name('master-players-value')
-        #store the info
-        for element in info:
-            self.__playerInfo.append(element.text)
 
-        
-        not_last_page = True
-        
         i = 0
         while True:
             #GET THE PLAYER'S GAMES            
@@ -70,11 +61,7 @@ class PlayerGames:
                 #close browser
                 driver.close()
                 
-                break;
-            
-
-            
-        
+                break;        
 
 
 # ## The Program:
@@ -84,10 +71,11 @@ class PlayerGames:
 # 
 # output: The download files a saved in your default download path for chrome. 
 
-# In[13]:
+# In[2]:
 
 
-name = input("Enter player name(e.g gary-kasparov): ")
+
+name = input("Enter player name(e.g garry-kasparov): ")
 games = PlayerGames(name)
 
 
